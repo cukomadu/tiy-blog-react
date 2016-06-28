@@ -19698,15 +19698,102 @@ var React = require('react'),
 
 var app = function app() {
 
+	var HomeView = React.createClass({
+		displayName: 'HomeView',
+
+		render: function render() {
+			return React.createElement('div', { id: 'container', __self: this
+			}, React.createElement(Header, {
+				__self: this
+			}), React.createElement(MainContent, {
+				__self: this
+			}));
+		}
+	});
+
 	var Header = React.createClass({
 		displayName: 'Header',
 
 		render: function render() {
-			return React.createElement('h1', null, 'YOLO');
+			return React.createElement('div', { className: 'pageheader', __self: this
+			}, React.createElement('img', { id: 'headerImg', src: 'http://magentanova.github.io/html-intro-1/images/houston.jpg', __self: this
+			}), React.createElement('div', { id: 'logo', __self: this
+			}, React.createElement('img', { src: 'http://magentanova.github.io/html-intro-1/images/ironyardlogo.png', __self: this
+			})));
 		}
 	});
 
-	ReactDOM.render(React.createElement(Header, null), document.querySelector('.container'));
+	var MainContent = React.createClass({
+		displayName: 'MainContent',
+
+		render: function render() {
+			return React.createElement('div', { className: 'content', __self: this
+			}, React.createElement(LeftCol, {
+				__self: this
+			}), React.createElement(CenterCol, {
+				__self: this
+			}), React.createElement(RightCol, {
+				__self: this
+			}));
+		}
+	});
+
+	var LeftCol = React.createClass({
+		displayName: 'LeftCol',
+
+		render: function render() {
+			return React.createElement('div', { className: 'leftContent', __self: this
+			}, React.createElement('h2', {
+				__self: this
+			}, 'THE IRON YARD | HOUSTON'), React.createElement('p', {
+				__self: this
+			}, ' Happenings and updates from The Iron Yard in Houston, TX'), React.createElement('h6', {
+				__self: this
+			}, 'SEARCH'), React.createElement('input', { type: 'text', placeholder: 'Search Keywords', __self: this
+			}));
+		}
+	});
+
+	var CenterCol = React.createClass({
+		displayName: 'CenterCol',
+
+		render: function render() {
+			return React.createElement('div', { className: 'centerContent', __self: this
+			}, React.createElement('h2', {
+				__self: this
+			}, 'September 22 Starts a New Class of The Iron Yard Houston Students'), React.createElement('p', { 'class': 'authorInfo', __self: this
+			}, React.createElement('em', {
+				__self: this
+			}, ' By Brain Dorton, Campus Director at ', React.createElement('a', { href: 'https://www.theironyard.com/', __self: this
+			}, 'The Iron Yard'), ' Houston')), React.createElement('div', {
+				__self: this
+			}, React.createElement('img', { id: 'centerColImg', src: 'http://magentanova.github.io/html-intro-1/images/classroom.jpg', __self: this
+			})), React.createElement('p', {
+				__self: this
+			}, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda rem dolore, pariatur cupiditate, sunt libero placeat optio doloribus asperiores possimus omnis perferendis accusantium aperiam et quaerat harum facilis praesentium animi.'));
+		}
+	});
+
+	var RightCol = React.createClass({
+		displayName: 'RightCol',
+
+		render: function render() {
+			return React.createElement('div', { className: 'fixedContent', __self: this
+			}, React.createElement('div', { id: 'alignfixed', __self: this
+			}, React.createElement('p', {
+				__self: this
+			}, 'Never miss a post!'), React.createElement('div', { id: 'alignChildren', __self: this
+			}, React.createElement('img', { id: 'fixedColImg', src: 'http://magentanova.github.io/html-intro-1/images/ironyardlogo.png', __self: this
+			}), React.createElement('span', { id: 'right', __self: this
+			}, 'tiyhouston'), React.createElement('p', { id: 'under', __self: this
+			}, 'The Iron Yard | Houston'), React.createElement('button', { id: 'follow', __self: this
+			}, '+  Follow'))));
+		}
+	});
+
+	ReactDOM.render(React.createElement(HomeView, {
+		__self: this
+	}), document.querySelector('.container'));
 };
 
 app();
